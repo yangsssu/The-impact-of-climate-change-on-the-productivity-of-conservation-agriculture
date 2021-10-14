@@ -153,8 +153,8 @@ for(k in 1:kk){
   mtree1<-500
   mtry1<-3
   
-  #qrf <- cforest(Change~PB+Tmax+Taverage+Crop+WDPT+F+R+RM+ST+Study.Duration+Yield.data.year+Latitude+Longitude,data=datatrain,weights=datatrain$ï..Seq,ntree = 500,mtry=5) #,weight=test$ï..Seq
-  qrf <- randomForest(Change~PB+Tmax+Tmin+Tave+WPCT+WPNT+FCT+FNT+RCT+RNT+SCCT+SCNT+ST+IrrigationCT+IrrigationNT,data=datatrain,ntree = mtree1,mtry=mtry1,proximity=TRUE,keep.inbag=T) #,,case.weights = abs(datatrain$ï..Seq_big)
+  #qrf <- cforest(Change~PB+Tmax+Taverage+Crop+WDPT+F+R+RM+ST+Study.Duration+Yield.data.year+Latitude+Longitude,data=datatrain,weights=datatrain$Ã¯..Seq,ntree = 500,mtry=5) #,weight=test$Ã¯..Seq
+  qrf <- randomForest(Change~PB+Tmax+Tmin+Tave+WPCT+WPNT+FCT+FNT+RCT+RNT+SCCT+SCNT+ST+IrrigationCT+IrrigationNT,data=datatrain,ntree = mtree1,mtry=mtry1,proximity=TRUE,keep.inbag=T) #,,case.weights = abs(datatrain$Ã¯..Seq_big)
   
   
   pred222 <- predict(qrf, newdata = datatest[,-2],type = "prob")
@@ -164,7 +164,7 @@ for(k in 1:kk){
   
   
   pred1<-pred222[,2]
-  #qrf <- quantregForest(x=datatrainxy[,3:12],y=datatrainxy[,2],keep.inbag = TRUE,mtry=14,ntree=300,nodesize=10,norm.votes=TRUE,weight=test$ï..Seq,weights=test$ï..Seq) #,weight=test$ï..Seq
+  #qrf <- quantregForest(x=datatrainxy[,3:12],y=datatrainxy[,2],keep.inbag = TRUE,mtry=14,ntree=300,nodesize=10,norm.votes=TRUE,weight=test$Ã¯..Seq,weights=test$Ã¯..Seq) #,weight=test$Ã¯..Seq
   
   #pred1<-predict(qrf,datatest[,3:12],what = 0.5,allow.new.levels = TRUE)
   
